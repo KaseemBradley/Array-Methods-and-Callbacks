@@ -117,11 +117,20 @@ Use the higher order function getAverageGoals to do the following:
  Example of invocation: getAverageGoals(getFinals(fifaData));
 */
 
-function getAverageGoals(/* code here */) {
-   /* code here */
+// let avgNum = getFinals(fifaData).reduce(function(counter, goals) {
+//     return counter + goals["Home Team Goals"] + goals["Away Team Goals"] 
+// }, 0)
+
+// console.log(avgNum)
+
+function getAverageGoals(data) {
+  let sum = data.reduce(function(counter, goals) {
+       return counter + goals["Home Team Goals"] + goals["Away Team Goals"]
+    }, 0) 
+    return (sum / data.length).toFixed(2)
 }
 
-
+console.log(getAverageGoals(getFinals(fifaData)))
 
 
 /// 🥅 STRETCH 🥅 ///
